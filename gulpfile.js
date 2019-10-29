@@ -3,29 +3,25 @@ const terser = require('gulp-terser')
 const eslint = require('gulp-eslint')
 const clean = require('gulp-clean')
 
-task('build', function (cb) {
+task('build', function () {
     return src('./src/index.js')
         .pipe(terser())
         .pipe(dest('./dist'))
-        .on('close', cb)
 })
 
-task('lint', function(cb) {
+task('lint', function() {
     return src(['./src/*.js'])
-        .pipe(eslint())
+        .pipe(eslint({
+            fix:true
+        }))
         .pipe(eslint.failOnError())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError())
-        .on('close', cb)
 })
 
-task('clear', function (cb) {
+task('clear', function () {
     return src('./dist', {read: false, allowEmpty: true})
         .pipe(clean())
-        .on('close', cb)
 })
 
-task('default', function(cb) {
-    series('clear', 'lint', 'build')
-    return cb()
-})
+task('default', series('clear', 'lint', 'build'))
