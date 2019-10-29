@@ -1,12 +1,13 @@
 {
-  "name": "jste",
+  "name": "node-js-skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "my configured nodejs-skeleton-app",
   "main": "index.js",
   "scripts": {
+    "start": "echo \"Error: no start configured\" && exit 1",
+    "debug": "echo \"Error: no debug configured\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp terse",
-    "commit": "gulp lint"
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +28,7 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run commit",
-      "pre-push": "npm run commit"
+      "pre-commit": "gulp"
     }
   }
 }
