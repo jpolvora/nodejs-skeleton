@@ -13,5 +13,14 @@
     "source.fixAll": true
   },
   "editor.formatOnSave": true,
-  "javascript.format.enable": false
+  "javascript.format.enable": false,
+  "editor.fontFamily": "SF Mono Light, Monospace",
+  "editor.fontSize": 12,
+  "terminal.integrated.fontFamily": "Monaco",
+  "terminal.integrated.fontSize": 11,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#023619",
+    "titleBar.activeBackground": "#024B23",
+    "titleBar.activeForeground": "#ECFEF4"
+  }
 }
